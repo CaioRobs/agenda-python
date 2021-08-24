@@ -1,15 +1,14 @@
-from controles import printaBarra, selecionaOpcao, adicionar, buscar, deletarContato, atualizar
-
+import controles as controle
 size = 30
 
-printaBarra(size)
+controle.printaBarra(size)
 print('\nIniciando Agenda\n')
-printaBarra(size)
+controle.printaBarra(size)
 
 contatos = []  # type: list
 
 while True:
-    option = selecionaOpcao()
+    option = controle.selecionaOpcao()
     print('~'*30)
 
     if option == '1':
@@ -18,29 +17,29 @@ while True:
         email = input('Digite o email: ')
         twitter = input('Digite o twitter: ')
         instagram = input('Digite o instagram: ')
-        cntact = adicionar(nome, telefone, email, twitter, instagram)
+        cntact = controle.adicionar(nome, telefone, email, twitter, instagram)
         contatos.append(cntact)
         print('\nContato adicionado')
-        printaBarra(size)
+        controle.printaBarra(size)
 
     elif option == '2':
         nome = input('Digite o nome do contato: ')
         print()
-        buscar(contatos, nome)
-        printaBarra(size)
+        controle.buscar(contatos, nome)
+        controle.printaBarra(size)
 
     elif option == '3':
         nome = input('Digite o nome do contato a deletar: ')
         print()
-        resultado = deletarContato(contatos, nome)
-        printaBarra(size)
+        resultado = controle.deletarContato(contatos, nome)
+        controle.printaBarra(size)
 
     elif option == '4':
         nome = input('Digite o nome do contato a atualizar: ')
         print()
-        atualizar(contatos, nome)
+        controle.atualizar(contatos, nome)
         print('Contato atualizado!')
-        printaBarra(size)
+        controle.printaBarra(size)
 
     elif option == '5':
         for contato in contatos:
@@ -51,7 +50,7 @@ while True:
             print(contato.getEmail())
             print(contato.getTwitter())
             print(contato.getInstagram())
-            printaBarra(size)
+            controle.printaBarra(size)
 
     elif option == '6':
         break
@@ -61,4 +60,4 @@ while True:
 
 
 print('\nEncerrando Agenda...')
-printaBarra(size)
+controle.printaBarra(size)
