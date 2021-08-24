@@ -1,6 +1,21 @@
 from contato import Contato
 
 
+def printaBarra():
+    print('~'*30)
+
+
+def selecionaOpcao():
+    print('Cadastrar contato -> 1')
+    print('Buscar contato -> 2')
+    print('Apagar contato -> 3')
+    print('Atualizar contato -> 4')
+    print('Listar todos os contatos -> 5')
+    print('Sair -> 6\n')
+    option = input('Selecione uma opção: ')
+    return option
+
+
 def adicionar(nome, telefone, email, twitter, instagram):
     novo_contato = Contato(nome, telefone, email, twitter, instagram)
     return novo_contato

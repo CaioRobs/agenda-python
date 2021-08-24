@@ -1,19 +1,13 @@
-import Agenda
+import controles
 
-print('~'*30)
+printaBarra()
 print('\nIniciando Agenda\n')
-print('~'*30)
+printaBarra()
 
 contatos = []  # type: list
 
 while True:
-    print('Cadastrar contato -> 1')
-    print('Buscar contato -> 2')
-    print('Apagar contato -> 3')
-    print('Atualizar contato -> 4')
-    print('Listar todos os contatos -> 5')
-    print('Sair -> 6\n')
-    option = input('Selecione uma opção: ')
+    option = selecionaOpcao()
     print('~'*30)
 
     if option == '1':
@@ -22,29 +16,29 @@ while True:
         email = input('Digite o email: ')
         twitter = input('Digite o twitter: ')
         instagram = input('Digite o instagram: ')
-        new_cnt = Agenda.adicionar(nome, telefone, email, twitter, instagram)
-        contatos.append(new_cnt)
+        cntact = controles.adicionar(nome, telefone, email, twitter, instagram)
+        contatos.append(cntact)
         print('\nContato adicionado')
-        print('~'*30+'\n')
+        printaBarra()
 
     elif option == '2':
         nome = input('Digite o nome do contato: ')
         print()
-        Agenda.buscar(contatos, nome)
-        print('~'*30+'\n')
+        controles.buscar(contatos, nome)
+        printaBarra()
 
     elif option == '3':
         nome = input('Digite o nome do contato a deletar: ')
         print()
-        resultado = Agenda.deletarContato(contatos, nome)
-        print('~'*30+'\n')
+        resultado = controles.deletarContato(contatos, nome)
+        printaBarra()
 
     elif option == '4':
         nome = input('Digite o nome do contato a atualizar: ')
         print()
-        Agenda.atualizar(contatos, nome)
+        controles.atualizar(contatos, nome)
         print('Contato atualizado!')
-        print('~'*30+'\n')
+        printaBarra()
 
     elif option == '5':
         for contato in contatos:
@@ -55,7 +49,7 @@ while True:
             print(contato.getEmail())
             print(contato.getTwitter())
             print(contato.getInstagram())
-            print('~'*30)
+            printaBarra()
 
     elif option == '6':
         break
@@ -65,4 +59,4 @@ while True:
 
 
 print('\nEncerrando Agenda...')
-print('~'*30)
+printaBarra()
