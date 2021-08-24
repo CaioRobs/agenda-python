@@ -1,8 +1,10 @@
-import controles
+from controles import printaBarra, selecionaOpcao, adicionar, buscar, deletarContato, atualizar
 
-printaBarra()
+size = 30
+
+printaBarra(size)
 print('\nIniciando Agenda\n')
-printaBarra()
+printaBarra(size)
 
 contatos = []  # type: list
 
@@ -16,29 +18,29 @@ while True:
         email = input('Digite o email: ')
         twitter = input('Digite o twitter: ')
         instagram = input('Digite o instagram: ')
-        cntact = controles.adicionar(nome, telefone, email, twitter, instagram)
+        cntact = adicionar(nome, telefone, email, twitter, instagram)
         contatos.append(cntact)
         print('\nContato adicionado')
-        printaBarra()
+        printaBarra(size)
 
     elif option == '2':
         nome = input('Digite o nome do contato: ')
         print()
-        controles.buscar(contatos, nome)
-        printaBarra()
+        buscar(contatos, nome)
+        printaBarra(size)
 
     elif option == '3':
         nome = input('Digite o nome do contato a deletar: ')
         print()
-        resultado = controles.deletarContato(contatos, nome)
-        printaBarra()
+        resultado = deletarContato(contatos, nome)
+        printaBarra(size)
 
     elif option == '4':
         nome = input('Digite o nome do contato a atualizar: ')
         print()
-        controles.atualizar(contatos, nome)
+        atualizar(contatos, nome)
         print('Contato atualizado!')
-        printaBarra()
+        printaBarra(size)
 
     elif option == '5':
         for contato in contatos:
@@ -49,7 +51,7 @@ while True:
             print(contato.getEmail())
             print(contato.getTwitter())
             print(contato.getInstagram())
-            printaBarra()
+            printaBarra(size)
 
     elif option == '6':
         break
@@ -59,4 +61,4 @@ while True:
 
 
 print('\nEncerrando Agenda...')
-printaBarra()
+printaBarra(size)

@@ -1,8 +1,8 @@
 from contato import Contato
 
 
-def printaBarra():
-    print('~'*30)
+def printaBarra(size):
+    print('~'*size)
 
 
 def selecionaOpcao():
