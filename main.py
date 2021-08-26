@@ -9,7 +9,7 @@ contatos = []
 
 while True:
     option = controle.selecionaOpcao()
-    print('~'*30)
+    controle.printaBarra(barra_size)
 
     if option == '1':
         nome = input('Digite o nome: ')
@@ -57,7 +57,6 @@ while True:
 
     else:
         print('Opção inválida!')
-
 
 print('\nEncerrando Agenda...')
 controle.printaBarra(barra_size)
