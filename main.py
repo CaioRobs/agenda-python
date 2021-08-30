@@ -17,8 +17,8 @@ while True:
         email = input('Digite o email: ')
         twitter = input('Digite o twitter: ')
         instagram = input('Digite o instagram: ')
-        cntact = controle.adicionar(nome, telefone, email, twitter, instagram)
-        contatos.append(cntact)
+        contact = controle.adicionar(nome, telefone, email, twitter, instagram)
+        contatos.append(contact)
         print('\nContato adicionado')
         controle.printaBarra(barra_size)
 

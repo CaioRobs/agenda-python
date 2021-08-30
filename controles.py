@@ -63,23 +63,24 @@ def atualizar(contatos, nome):
                 print('Email -> 3')
                 print('Twitter -> 4')
                 print('Instagram -> 5')
-                dado = int(input())
-                if (dado == 1):
-                    contato.setNome()
-                    return
-                if (dado == 2):
-                    contato.setTelefone()
-                    return
-                if (dado == 3):
-                    contato.setEmail()
-                    return
-                if (dado == 4):
-                    contato.setTwitter()
-                    return
-                if (dado == 5):
-                    contato.setInstagram()
-                    return
-                print('Opção inválida!')
+                while True:
+                    dado = int(input())
+                    if (dado == 1):
+                        contato.setNome()
+                        return
+                    if (dado == 2):
+                        contato.setTelefone()
+                        return
+                    if (dado == 3):
+                        contato.setEmail()
+                        return
+                    if (dado == 4):
+                        contato.setTwitter()
+                        return
+                    if (dado == 5):
+                        contato.setInstagram()
+                        return
+                    print('Opção inválida!')
         print('Contato não encontrado!')
     else:
         print('Lista está vazia!')
