@@ -31,7 +31,7 @@ class Contato():
         return self.__twitter
 
     def setInstagram(self):
-        self.getInstagram = input('\nDigite o novo Instagram: ')
+        self.__instagram = input('\nDigite o novo Instagram: ')
 
     def getInstagram(self):
         return self.__instagram
