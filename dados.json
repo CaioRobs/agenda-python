@@ -1,1 +1,9 @@
-"[{\"_Contato__nome\": \"caio\", \"_Contato__telefone\": 123, \"_Contato__email\": \"caio@\", \"_Contato__twitter\": \"@caio\", \"_Contato__instagram\": \"C@io\"}, {\"_Contato__nome\": \"sam\", \"_Contato__telefone\": 1234556, \"_Contato__email\": \"sam@sam\", \"_Contato__twitter\": \"@sam\", \"_Contato__instagram\": \"S@m\"}]"
+{
+  "0": {
+    "nome": "sam",
+    "telefone": 1234566,
+    "email": "sam@sam",
+    "twitter": "@sam",
+    "instagram": "S@m"
+  }
+}
