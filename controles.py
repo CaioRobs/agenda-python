@@ -1,8 +1,23 @@
+import json
+from json import JSONEncoder
 from contato import Contato
+
+
+class MyEncoder(JSONEncoder):
+    def default(self, o):
+        return o.__dict__
 
 
 def printaBarra(size):
     print('~'*size)
+
+
+def gravar(lista):
+    codified = MyEncoder().encode(lista)
+    print(codified)
+    with open('dados.json', 'w') as file:
+        json.dump(codified, file, indent=2)
+        file.close()
 
 
 def selecionaOpcao():

@@ -55,6 +55,7 @@ while True:
             controle.printaBarra(barra_size)
 
     elif option == '6':
+        controle.gravar(contatos)
         break
 
     else:
