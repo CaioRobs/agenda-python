@@ -8,3 +8,5 @@ Projeto final da matéria de Algorítmo e Programação de computadores do curso
 O arquivo contato.py declara uma classe chamada Contato, sendo um dicionário onde são guardados os dados, que são: nome, telefone, email, tweeter e instagram e também métodos próprios que retornam ou alteram cada um desses dados.
 
 O arquivo controles.py é onde estão declaradas as funções utilizadas no programa principal.
+
+Na inicialização, o programa procura pelo arquivo dados.json que é onde serão gravados os dados no final da execução. Se o arquivo não existir ele é criado localmente.
