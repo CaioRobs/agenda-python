@@ -1,8 +1,49 @@
+import json
 from contato import Contato
 
 
-def printaBarra(size):
-    print('~'*size)
+def printaBarra():
+    barra_size = 30
+    print('~'*barra_size)
+
+
+def ler():
+    contatos = []
+    try:
+        with open('dados.json', 'r') as file:
+            agenda_externa = json.load(file)
+            for contato in agenda_externa:
+                print(agenda_externa[contato])
+                nome = agenda_externa[contato]['nome']
+                telefone = agenda_externa[contato]['telefone']
+                email = agenda_externa[contato]['email']
+                twitter = agenda_externa[contato]['twitter']
+                instagram = agenda_externa[contato]['instagram']
+                contact = adicionar(nome, telefone, email, twitter, instagram)
+                print(contact)
+                contatos.append(contact)
+            file.close()
+            return contatos
+    except FileNotFoundError:
+        gravar({})
+        return contatos
+
+
+def gravar(listaDeContatos):
+    agenda = {}
+    contador = 0
+    for contato in listaDeContatos:
+        newContato = {}
+        newContato['nome'] = contato.getNome()
+        newContato['telefone'] = contato.getTelefone()
+        newContato['email'] = contato.getEmail()
+        newContato['twitter'] = contato.getTwitter()
+        newContato['instagram'] = contato.getInstagram()
+        agenda[contador] = newContato
+        contador += 1
+    with open('dados.json', 'w') as file:
+        json.dump(agenda, file, indent=2)
+        file.close()
 
 
 def selecionaOpcao():
