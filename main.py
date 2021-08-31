@@ -1,4 +1,6 @@
 import controles as controle
+
+
 barra_size = 30
 
 controle.printaBarra(barra_size)
